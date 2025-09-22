@@ -1,0 +1,2 @@
+;; Generated package description from preview-auto.el  -*- no-byte-compile: t -*-
+(define-package "preview-auto" "0.4" "Automatic previews in AUCTeX" '((emacs "29.3") (auctex "14.0.5")) :commit "fcbd9f12c323da336089bf008920c0a290126393" :authors '(("Paul D. Nelson" . "nelson.paul.david@gmail.com")) :maintainer '("Paul D. Nelson" . "nelson.paul.david@gmail.com") :keywords '("tex" "convenience") :url "https://github.com/ultronozm/preview-auto.el")

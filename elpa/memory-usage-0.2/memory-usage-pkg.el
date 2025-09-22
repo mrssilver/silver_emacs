@@ -1,0 +1,2 @@
+;; Generated package description from memory-usage.el  -*- no-byte-compile: t -*-
+(define-package "memory-usage" "0.2" "Analyze the memory usage of Emacs in various ways" 'nil :commit "cb73fe66a59d737a72a5ed4259794b1d75aefa2c" :url "https://elpa.gnu.org/packages/memory-usage.html" :authors '(("Stefan Monnier" . "monnier@cs.yale.edu")) :maintainer '("Stefan Monnier" . "monnier@cs.yale.edu") :keywords '("maint"))

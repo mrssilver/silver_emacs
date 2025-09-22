@@ -1,0 +1,2 @@
+;; Generated package description from spell-fu.el  -*- no-byte-compile: t -*-
+(define-package "spell-fu" "0.3" "Fast & light spelling highlighter" '((emacs "26.2")) :commit "ddad489f2c87467480520502a93e682f81bfac18" :authors '(("Campbell Barton" . "ideasman42@gmail.com")) :maintainer '("Campbell Barton" . "ideasman42@gmail.com") :keywords '("convenience") :url "https://gitlab.com/ideasman42/emacs-spell-fu")

@@ -1,0 +1,2 @@
+;; Generated package description from minibar.el  -*- no-byte-compile: t -*-
+(define-package "minibar" "0.3" "Modular status bar in minibuffer" '((emacs "27.2")) :commit "22831489d3bbc22aef315c0f003bf3756b8889fa" :authors '(("Akib Azmain Turja" . "akib@disroot.org")) :maintainer '("Akib Azmain Turja" . "akib@disroot.org") :keywords '("calendar" "hardware") :url "https://codeberg.org/akib/emacs-minibar")

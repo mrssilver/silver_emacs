@@ -1,0 +1,2 @@
+;; Generated package description from isearch-mb.el  -*- no-byte-compile: t -*-
+(define-package "isearch-mb" "0.8" "Control isearch from the minibuffer" '((emacs "27.1")) :commit "927ea1790bd0c474be5f63bd9c23874e6c61fb48" :authors '(("Augusto Stoffel" . "arstoffel@gmail.com")) :maintainer '("Augusto Stoffel" . "arstoffel@gmail.com") :keywords '("matching") :url "https://github.com/astoff/isearch-mb")

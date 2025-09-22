@@ -1,0 +1,411 @@
+2.2.0 / 2023-03-09
+==================
+
+- fix to check journal files in symlink directory correctly (tomoyukim)
+- Add note for issue #406 in README.org (Marcel van der Boom)
+- fix: do not error out on timestamps with extra components (#407) (Janek)
+- fix failing test case #404 (Jason May)
+- don't break journaling if CREATED exists at file level #383 (Jason May)
+- fill docstrings to prevent byte-compile warnings (Jason May)
+- Add NonGNU ELPA to installation instructions (Stefan Kangas)
+- Add NonGNU ELPA badge to README.org (Stefan Kangas)
+- Add copyright and license header (Stefan Kangas)
+- Encryption enabling added to org-journal-mode-hook (quantum)
+- added documentation for `org-journal-mode-hook` (quantum)
+- visual-line-mode not present in org-journal-mode-hook (quantum)
+- Replace kill-region with delete-region (Janek)
+- removed repeated text from readme (Harsha Somisetty)
+- Fix multi-line file header being mixed up with the journal entry. (Alexander Miller)
+- Minor typos in docstrings (Christopher League)
+- document org-journal-hide-entries-p (Damien)
+- Remove deplicate of C-c C-j definition. (Dmitrii Kuragin)
+- Update documentation to reflect removed 'C-c C-j' global key (Dmitrii Kuragin)
+- Remove key definition in the package loading. (Dmitrii Kuragin)
+- Fix failing test (Christian Schwarzgruber)
+- Set FIXEDCASE flag on replace-regexp-in-string (Christian Schwarzgruber)
+- Add scheduled entry time of the day (Daniel Nicolai)
+- Replace get-file-buffer with find-buffer-visiting (wolfwang)
+- Fix incorrect entry-path when extend-today (yangsheng6810)
+- Just a little code rework (Christian Schwarzgruber)
+- Swallow message in test (Christian Schwarzgruber)
+- Also test against Emacs 27.1 (Christian Schwarzgruber)
+- Fix and clean-up org-journal-scheduled-weekly-test (Christian Schwarzgruber)
+- Fix Agenda integration when not using daily files (Christian Schwarzgruber)
+
+2.1.2 / 2021-01-28
+==================
+
+  - Ignore org-journal-autoloads.el (Christian Schwarzgruber)
+  - Update CONTRIBUTORS file (Christian Schwarzgruber)
+  - Update CHANGELOG file with missing 2.1.1 changes (Christian Schwarzgruber)
+  - Adapt CHANGELOG file for new format (Christian Schwarzgruber)
+  - Add new internal function org-journal--sanity-checks (Christian Schwarzgruber)
+  - Rename org-journal--dir-check-or-create to org-journal--create-journal-dir (Christian Schwarzgruber)
+  - Re-factor org-journal-new-entry (Christian Schwarzgruber)
+  - Rename org-journal--org-heading-p to org-journal--is-date-prefix-org-heading-p (Christian Schwarzgruber)
+  - Mark org-journal-delete-old-carryover public by replacing -- with - (Christian Schwarzgruber)
+  - More work on doc-strings (Christian Schwarzgruber)
+  - Resolve #323 (aragaer)
+  - Add test for #323 and fix small bug in org-journal-new-date-entry (Christian Schwarzgruber)
+  - Formatting (Christian Schwarzgruber)
+  - Fix doc-string warnings (Christian Schwarzgruber)
+  - Add fixme to test case (Christian Schwarzgruber)
+  - Move yearly test to subdirectory too (Christian Schwarzgruber)
+  - Kill any left over buffers after the ert test failed on next execution (Christian Schwarzgruber)
+  - Argument scheduled-time is a list not a string and cannot be passed to org-time-string-to-time (Christian Schwarzgruber)
+  - [tests] Move daily carryover tests to subdirectory (Christian Schwarzgruber)
+  - Prepare for next patch release (Christian Schwarzgruber)
+  - Merge branch 'pr-322' (Christian Schwarzgruber)
+  - Add test to proof that 7 is correct for Sunday week start (Christian Schwarzgruber)
+  - Try to reproduce #309 (Christian Schwarzgruber)
+  - Define edebug spec for debugging (Christian Schwarzgruber)
+  - Fix "start on sunday" issue (aragaer)
+  - Merge pull request #320 from daveduthie/master (Christian Schwarzgruber)
+  - Add missing third arg to `define-obsolete-function-alias` (David Duthie)
+  - Merge pull request #314 from emiltoacs/master (Bastian Bechtold)
+  - Solve error when org-journal-dir has symlink in the path (emiltoacs)
+  - Merge pull request #310 from lamb003/patch-1 (Christian Schwarzgruber)
+  - Fixed small typo (Chad Lamb)
+  - Add function `org-journal-reschedule-scheduled-entry` (Resolve #300) (Christian Schwarzgruber)
+  - Merge pull request #307 from june3474/old-carryover (Christian Schwarzgruber)
+  - Fix example in README.org (dks)
+  - Terminology Consistency (dks)
+  - Enable to do custom actions for old carryover entries (dks)
+  - Really fix #304 (Christian Schwarzgruber)
+  - adding daily files for testing (Alan Schmitt)
+  - Add -L to follow new location (Christian Schwarzgruber)
+  - Add test for #304 (Christian Schwarzgruber)
+  - Fix #304 (Christian Schwarzgruber)
+  - Merge README enhancement from  brabalan/patch-1 (Christian Schwarzgruber)
+  - Adjust #303 (Resolves #302) (Christian Schwarzgruber)
+  - Merge remote-tracking branch 'brabalan/patch-1' (Christian Schwarzgruber)
+  - Org capture integration for future scheduled task (Alan Schmitt)
+  - Fix regression introduced in a75aee3 (Fix #294, Fix #295) (Christian Schwarzgruber)
+  - Merge README org-capture improvement 'pr-293' (Christian Schwarzgruber)
+  - Simplify org-capture integration section in README (Christian Schwarzgruber)
+  - org-collect-keywords has a different signature (Fix #289) (Christian Schwarzgruber)
+  - Add capture integration example for monthly journal (Sébastien Lerique)
+  - Add section -- Contributing to org-journal -- to README (Christian Schwarzgruber)
+  - Silent byte-compiler (Christian Schwarzgruber)
+  - Merge branch 'sort-dates' (Christian Schwarzgruber)
+  - Fix indentation (Christian Schwarzgruber)
+  - Updated org-journal-sort-dates to use prev arg (Jay)
+  - Moved sort logic of dates from open-entry into new func (Jay)
+  - Fix #289 (Christian Schwarzgruber)
+
+2.1.1 / 2020-08-23
+==================
+
+  - Patch release (2.1.1) (Christian Schwarzgruber)
+  - Only delete drawers once when carrying over todos (Fix #267) (Christian Schwarzgruber)
+  - Make it clear which functions/variables are for internal use only (Christian Schwarzgruber)
+  - Merge pull request #288 from ja0nz/add-iso-week-format-code (Christian Schwarzgruber)
+  - Added '%V' shortcode to the format-rx-alist and documentation (Ja0nz)
+  - Keep time intact when updating timestamps on carryover (Fix #285) (Christian Schwarzgruber)
+  - Merge fix for handling new org-agenda-files (Christian Schwarzgruber)
+  - Use org-store-new-agenda-file-list to manipulate org-agenda-files (Stig Brautaset)
+  - Remove keys from hash when files do not exists anymore (Fix #279) (Christian Schwarzgruber)
+  - Fix doc string (Christian Schwarzgruber)
+  - Add new defcustom org-journal-prefix-key (Resolve #255) (Christian Schwarzgruber)
+  - Follow the convention - don't end error messages with a dot (Christian Schwarzgruber)
+  - Use user-error instead error where it is more appropriate (Christian Schwarzgruber)
+  - Update documentation strings (Christian Schwarzgruber)
+  - Simplify cl-loop's in org-journal-carryover (Christian Schwarzgruber)
+  - Remove unnecessary variable bindings in org-journal-open-entry (Christian Schwarzgruber)
+  - Redesign org-journal-invalidate-cache (Christian Schwarzgruber)
+  - Don't modify original list in org-journal-open-entry (Christian Schwarzgruber)
+  - Remove all dates first which belong to the file being added to the hash table (Christian Schwarzgruber)
+  - Check if there are new journal files after verifying the modification time (Christian Schwarzgruber)
+  - Update documentation (Christian Schwarzgruber)
+  - Fix possible error when org-journal-dir is a symlink when creating the org-journal-dir (Christian Schwarzgruber)
+  - Use a single hash table for dates/files (Christian Schwarzgruber)
+  - Fix tests (Christian Schwarzgruber)
+  - Sort return value of hash-table-values; oldest -> newest (Fix #272) (Christian Schwarzgruber)
+
+2.1.2 / 2021-01-27
+==================
+
+  - Ignore org-journal-autoloads.el (Christian Schwarzgruber)
+  - Update CONTRIBUTORS file (Christian Schwarzgruber)
+  - Update CHANGELOG file with missing 2.1.1 changes (Christian Schwarzgruber)
+  - Adapt CHANGELOG file for new format (Christian Schwarzgruber)
+  - Add new internal function org-journal--sanity-checks (Christian Schwarzgruber)
+  - Rename org-journal--dir-check-or-create to org-journal--create-journal-dir (Christian Schwarzgruber)
+  - Re-factor org-journal-new-entry (Christian Schwarzgruber)
+  - Rename org-journal--org-heading-p to org-journal--is-date-prefix-org-heading-p (Christian Schwarzgruber)
+  - Mark org-journal-delete-old-carryover public by replacing -- with - (Christian Schwarzgruber)
+  - More work on doc-strings (Christian Schwarzgruber)
+  - Resolve #323 (aragaer)
+  - Add test for #323 and fix small bug in org-journal-new-date-entry (Christian Schwarzgruber)
+  - Formatting (Christian Schwarzgruber)
+  - Fix doc-string warnings (Christian Schwarzgruber)
+  - Add fixme to test case (Christian Schwarzgruber)
+  - Move yearly test to subdirectory too (Christian Schwarzgruber)
+  - Kill any left over buffers after the ert test failed on next execution (Christian Schwarzgruber)
+  - Argument scheduled-time is a list not a string and cannot be passed to org-time-string-to-time (Christian Schwarzgruber)
+  - [tests] Move daily carryover tests to subdirectory (Christian Schwarzgruber)
+  - Prepare for next patch release (Christian Schwarzgruber)
+  - Merge branch 'pr-322' (Christian Schwarzgruber)
+  - Add test to proof that 7 is correct for Sunday week start (Christian Schwarzgruber)
+  - Try to reproduce #309 (Christian Schwarzgruber)
+  - Define edebug spec for debugging (Christian Schwarzgruber)
+  - Fix "start on sunday" issue (aragaer)
+  - Merge pull request #320 from daveduthie/master (Christian Schwarzgruber)
+  - Add missing third arg to `define-obsolete-function-alias` (David Duthie)
+  - Merge pull request #314 from emiltoacs/master (Bastian Bechtold)
+  - Solve error when org-journal-dir has symlink in the path (emiltoacs)
+  - Merge pull request #310 from lamb003/patch-1 (Christian Schwarzgruber)
+  - Fixed small typo (Chad Lamb)
+  - Add function `org-journal-reschedule-scheduled-entry` (Resolve #300) (Christian Schwarzgruber)
+  - Merge pull request #307 from june3474/old-carryover (Christian Schwarzgruber)
+  - Fix example in README.org (dks)
+  - Terminology Consistency (dks)
+  - Enable to do custom actions for old carryover entries (dks)
+  - Really fix #304 (Christian Schwarzgruber)
+  - adding daily files for testing (Alan Schmitt)
+  - Add -L to follow new location (Christian Schwarzgruber)
+  - Add test for #304 (Christian Schwarzgruber)
+  - Fix #304 (Christian Schwarzgruber)
+  - Merge README enhancement from  brabalan/patch-1 (Christian Schwarzgruber)
+  - Adjust #303 (Resolves #302) (Christian Schwarzgruber)
+  - Merge remote-tracking branch 'brabalan/patch-1' (Christian Schwarzgruber)
+  - Org capture integration for future scheduled task (Alan Schmitt)
+  - Fix regression introduced in a75aee3 (Fix #294, Fix #295) (Christian Schwarzgruber)
+  - Merge README org-capture improvement 'pr-293' (Christian Schwarzgruber)
+  - Simplify org-capture integration section in README (Christian Schwarzgruber)
+  - org-collect-keywords has a different signature (Fix #289) (Christian Schwarzgruber)
+  - Add capture integration example for monthly journal (Sébastien Lerique)
+  - Add section -- Contributing to org-journal -- to README (Christian Schwarzgruber)
+  - Silent byte-compiler (Christian Schwarzgruber)
+  - Merge branch 'sort-dates' (Christian Schwarzgruber)
+  - Fix indentation (Christian Schwarzgruber)
+  - Updated org-journal-sort-dates to use prev arg (Jay)
+  - Moved sort logic of dates from open-entry into new func (Jay)
+  - Fix #289 (Christian Schwarzgruber)
+
+2.1.1 / 2020-08-23
+==================
+
+  - Patch release (2.1.1) (Christian Schwarzgruber)
+  - Only delete drawers once when carrying over todos (Fix #267) (Christian Schwarzgruber)
+  - Make it clear which functions/variables are for internal use only (Christian Schwarzgruber)
+  - Merge pull request #288 from ja0nz/add-iso-week-format-code (Christian Schwarzgruber)
+  - Added '%V' shortcode to the format-rx-alist and documentation (Ja0nz)
+  - Keep time intact when updating timestamps on carryover (Fix #285) (Christian Schwarzgruber)
+  - Merge fix for handling new org-agenda-files (Christian Schwarzgruber)
+  - Use org-store-new-agenda-file-list to manipulate org-agenda-files (Stig Brautaset)
+  - Remove keys from hash when files do not exists anymore (Fix #279) (Christian Schwarzgruber)
+  - Fix doc string (Christian Schwarzgruber)
+  - Add new defcustom org-journal-prefix-key (Resolve #255) (Christian Schwarzgruber)
+  - Follow the convention - don't end error messages with a dot (Christian Schwarzgruber)
+  - Use user-error instead error where it is more appropriate (Christian Schwarzgruber)
+  - Update documentation strings (Christian Schwarzgruber)
+  - Simplify cl-loop's in org-journal-carryover (Christian Schwarzgruber)
+  - Remove unnecessary variable bindings in org-journal-open-entry (Christian Schwarzgruber)
+  - Redesign org-journal-invalidate-cache (Christian Schwarzgruber)
+  - Don't modify original list in org-journal-open-entry (Christian Schwarzgruber)
+  - Remove all dates first which belong to the file being added to the hash table (Christian Schwarzgruber)
+  - Check if there are new journal files after verifying the modification time (Christian Schwarzgruber)
+  - Update documentation (Christian Schwarzgruber)
+  - Fix possible error when org-journal-dir is a symlink when creating the org-journal-dir (Christian Schwarzgruber)
+  - Use a single hash table for dates/files (Christian Schwarzgruber)
+  - Fix tests (Christian Schwarzgruber)
+  - Sort return value of hash-table-values; oldest -> newest (Fix #272) (Christian Schwarzgruber)
+
+2.1.0 / 2020-07-14
+==================
+
+  - Allow changing start of week for weekly journal fils (Thank you, Jeff Spaulding)
+  - Improve carryover functionality
+  - Allow changing of CREATED property timestamp
+  - Fix and improve org-journal-agenda
+  - Add org-journal-open-current-journal-file (Thank you, Sibi Prabakaran)
+  - Add support to skip carrying over drawers (Thank you, Sibi Prabakaran)
+  - Lot of general code improvements and bug fixes
+  - Documentation update (Thank you, Doolio)
+  - Support %b/%B in org-journal-file-format (Thank you, Jinhee Baek)
+
+2.0.0 / 2019-10-30
+==================
+
+  - Adds support for weekly, monthly and yearly journal files
+  - Adds cache to speed up calendar operations
+  - Adds support for persistent tags (Thank you, Tina Russell!)
+  - Improves search result buffer
+  - Include start/end date in search result
+  - Adds `org-journal-follow-mode` to follow journal entries when moving between entries in calendar
+
+1.15.1 / 2019-02-20
+===================
+
+  - adds a beautiful logo (Thank you, Tina Russell!)
+  - Fixes issue with encryption, byte-compilation (Thank you, Christian Schwarzgruber!)
+  - Improves documentation (Thank you, EFLS!)
+  - Fixes initialization error (Thank you, Christian Schwarzgruber!)
+
+1.15.0 / 2018-11-15
+===================
+
+  - adds org-journal-time-format-post-midnight for formatting post-midnight timestamps (Thank you, Tina Russell!)
+  - adds support for subdirectories in org-journal-file-format (Thank you, Tina Russell!)
+
+1.14.3 / 2018-07-23
+===================
+
+  - Removes debug output. Sorry about that.
+
+1.14.2 / 2018-06-03
+===================
+
+  - Changes "SCHEDULED" entries to entries with timestamp (because that's how org does it)
+
+1.14.1 / 2018-05-14
+===================
+
+  - Adds support for org-extend-today-until
+
+1.13.4 / 2018-04-18
+==================
+
+  - Fixes issue if org-journal-dir does not end in "/"
+
+1.13.3 / 2018-04-02
+===================
+
+  - Fixes prefix for future journal entries
+
+1.13.2 / 2018-04-02
+===================
+
+  - Fixes deprecation warnings and requires Emacs >= 25.1
+
+1.13.1 / 2018-04-02
+===================
+
+  - Implements org-agenda integration
+
+1.13.0 / 2018-03-27
+===================
+
+  - Implements scheduling of future events
+
+1.12.3 / 2017-11-13
+===================
+
+  - Autoload fixes (thank you, Troy Hinckley!)
+  - Fixes for org-journal-file-format if it has a file extension or is behind a symlink.
+
+1.12.2 / 2017-09-28
+===================
+
+  - Fixes buffer modified flag (should fix many accidental journal deletions)
+
+1.12.1 / 2017-07-05
+===================
+
+  - Adds documentation for spacemacs (thank you, borgnix!)
+  - Documentation improvements (thank you, Vladimir Kazanov!)
+  - Allows functions as org-journal-date-prefix (thank you, Samim, Pezeshki!)
+
+1.12.0 / 2017-01-26
+===================
+
+  - Add customization option for the search order (thank you, aJchemist!).
+  - Add LICENSE
+  - Add keybinding for searching the journal outside of the calendar (thank you, Vladimir Kazanov!)
+  - Improve README tremendously (thank you, Vladimir Kazanov and Grace Gahman!)
+
+1.11.0 / 2016-04-27
+===================
+
+  - Add highlight to search results (thank you, aJchemist!).
+  - Add option to carry over TODO items from previous entry when creating a new entry.
+
+1.10.0 / 2015-09-07
+==================
+
+  - Add option to find-file in same window.
+
+1.9.1 / 2015-07-01
+==================
+
+  - Encryption and prefix now work for calendar-created entries (thank you, Puneeth Chaganti!).
+
+1.9.0 / 2015-06-22
+==================
+
+  - Journal files can now be encrypted if you set org-journal-enable-encryption (thank you, Donghyun Cho and Puneeth Chaganti!).
+
+1.8.0 / 2015-05-04
+==================
+
+  - No more empty files when creating new entries with prefix (thank you, Vladimir Kazanov!).
+  - You can now customize whether org-journal-mode will hide entries (thank you, Boris Buliga!).
+
+1.7.0 / 2015-03-01
+==================
+
+  - Added functions for searching journal entries in date ranges (thank you, Vladimir Kazanov!).
+
+1.6.4 / 2014-17-12
+==================
+
+  - Journal files should open correctly when restored by desktop-save-mode now.
+
+1.6.3 / 2014-08-12
+==================
+
+  - Added key binding for viewing but not switching to entry (thank you, Vladimir Kazanov!)
+
+1.6.2 / 2014-08-12
+==================
+
+  - Added prefix argument to open-current-entry (thank you, Vladimir Kazanov!)
+
+1.6 / 2014-11-19
+================
+
+  - Changed default key bindings to comply with Emacs' standards.
+
+1.5 / 2014-06-17
+================
+
+  - Some more bug fixes for autoloading
+  - Simplified setup by auto generating the file pattern from the file format.
+
+1.4.8 / 2014-03-10
+==================
+
+  - Some bug fixes on opening files (thank you, Ram Raghunathan!)
+
+1.4.8 / 2013-11-10
+==================
+
+  - Fixed opening of journal files for reading (thank you, Matthew M. Keeler!)
+  - View mode now stays active when switching between files (thank you, Matthew M. Keeler!)
+  - Some autoload fixes
+
+1.4.4 / 2013-10-02
+==================
+
+  - Create org-journal directory if not present (thank you, Donghyun Cho!)
+
+1.4.3 / 2013-09-17
+==================
+
+  - Several bugfixes and autoloading (which kind of mostly works)
+
+1.4 / 2013-08-23
+================
+
+  - Now supports more customization
+
+1.3.4 / 2013-06-12
+==================
+
+  - Several bug fixes and documentation improvements.
+
+1.0 / 2013-06-04
+================
+
+  - Initial working prototype. More or less simply an extension of personal-diary with org-mode files.
