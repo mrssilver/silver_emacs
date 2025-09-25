@@ -1,3 +1,4 @@
+
 (deftheme imperial-gold "imperial theme")
 
 ;; 配色方案
@@ -10,12 +11,12 @@
     (royal-blood   . "#c23b3b")    ; 函数/变量定义血色
     (imperial-gold . "#e6b422")    ; 注释金色
     (ivory-milk    . "#fffaf0")    ; 普通字符乳白
-    (cream-highlight . "#fffff1")  ; 高亮乳白green
+    (cream-highlight . "#fffff1")  ; 高亮乳白
     (gold-light    . "#ffed8a")    ; 辅助金色
-    (crimson-shadow . "#fc7f22")   ; 血色阴影
+    (crimson-shadow . "#fc7f22")   ; 血色阴影 orange
     (regal-purple  . "#5d3a9b")    ; 装饰紫色
-    (inactive-bg   . "#1f1b24")    ; 非激活模式行背景
-    (inactive-fg   . "#a81159")))  ; 非激活模式行前景
+    (night-sky   . "#1f1b24")    ; 非激活模式行背景 night black
+    (light-red   . "#a81159")))  ; 非激活模式行前景light red
 
 (custom-theme-set-faces
  'imperial-gold
@@ -41,14 +42,18 @@
  ;; 注释
  `(font-lock-comment-face ((t :foreground ,(cdr (assoc 'ivory-milk imperial-gold/colors)) :italic t)))
  ;; == 其他 UI 元素 ==
- `(line-number ((t :foreground ,(cdr (assoc 'inactive-fg imperial-gold/colors))
+ `(line-number ((t :foreground ,(cdr (assoc 'light-red imperial-gold/colors))
                    :background ,(cdr (assoc 'midnight-bg imperial-gold/colors)))))
  `(line-number-current-line ((t :foreground ,(cdr (assoc 'regal-purple imperial-gold/colors))
                                 :background ,(cdr (assoc 'cream-highlight imperial-gold/colors)))))
  `(minibuffer-prompt ((t :foreground ,(cdr (assoc 'imperial-gold imperial-gold/colors))
                          :weight bold)))
  `(highlight ((t :background ,(cdr (assoc 'cream-highlight imperial-gold/colors)))))
+ `(match ((t :foreground ,(cdr (assoc 'light-red imperial-gold/colors))
+                   :background ,(cdr (assoc  'gold-light imperial-gold/colors)))))
 
+ `(occur-match ((t :foreground ,(cdr (assoc 'light-red imperial-gold/colors))
+                   :background ,(cdr (assoc 'gold-light imperial-gold/colors)))))
 	
 	
 	
@@ -58,8 +63,8 @@
                  :foreground ,(cdr (assoc 'imperial-gold imperial-gold/colors))
                  :box nil
                  :height 1.05)))
- `(mode-line-inactive ((t :background ,(cdr (assoc 'inactive-bg imperial-gold/colors)) 
-                        :foreground ,(cdr (assoc 'inactive-fg imperial-gold/colors)))))
+ `(mode-line-inactive ((t :background ,(cdr (assoc 'night-sky imperial-gold/colors)) 
+                        :foreground ,(cdr (assoc 'light-red imperial-gold/colors)))))
 
  ;; 文件名
  `(mode-line-buffer-face ((t :foreground ,(cdr (assoc 'imperial-gold imperial-gold/colors))
@@ -71,11 +76,18 @@
 
 
 
- `(cursor ((t :background ,(cdr (assoc 'gold-light imperial-gold/colors)))))
- `(region ((t :background ,(cdr (assoc 'crimson-shadow imperial-gold/colors)))))
-
-
 )
+
+
+;; I-search匹配高亮
+;;(set-face-foreground 'isearch "#ffff00")       ; 亮黄色前景
+;;(set-face-background 'isearch "#00ff00")       ; 亮绿色背景
+;;(set-face-bold 'isearch t)                     ; 加粗
+
+;; Occur模式匹配高亮
+;;(set-face-foreground 'occur-match "#ffff00")   ; 亮黄色前景  
+;;(set-face-background 'occur-match "#00ff00")   ; 亮绿色背景
+;;(set-face-bold 'occur-match t)                 ; 加粗
 
 
 
@@ -109,24 +121,6 @@
 
 
 ))
-;;test
-;;(force-mode-line-update)
-
-
-;; 创建定时器
-;;(defvar heartbeat-timer nil)
-;;(setq heartbeat-timer (run-with-timer 0 3.7 #'imperial-gold/heartbeat))
-
-;; 取消定时器
-(defun cancel-mode-timer ()
-  (when heartbeat-timer
-    (cancel-timer heartbeat-timer)
-    (setq heartbeat-timer nil)))
-
-;;(cancel-mode-timer)
-
-
-
 
 
 
@@ -142,6 +136,9 @@
         (cdr (assoc 'ivory-milk imperial-gold/colors))    ; 3. 乳白
         (cdr (assoc 'gold-light imperial-gold/colors))    ; 4. 亮金
         (cdr (assoc 'regal-purple imperial-gold/colors)))) ; 5. 紫金
+
+
+
 
 (defun imperial-gold/setup-bracket-colors ()
   "应用帝王金主题的递归括号配色"
@@ -193,14 +190,14 @@
 ;; ======================================================================
 ;; == 自动启用递归括号可视化（所有编程模式hook）==
 ;; ======================================================================
-(defun imperial-gold/enable-bracket-visualization ()
+(defun imperial-gold/bracket-visualization ()
   "为所有编程模式启用递归括号可视化"
   (require 'rainbow-delimiters)
   (rainbow-delimiters-mode t)
   (show-paren-mode t))
 
 ;; 添加到所有编程模式的hook
-(add-hook 'prog-mode-hook #'imperial-gold/enable-bracket-visualization)
+(add-hook 'prog-mode-hook #'imperial-gold/bracket-visualization)
 
 
 
