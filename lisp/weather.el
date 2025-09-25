@@ -405,11 +405,8 @@
   (weather-update t)
   (message "天气系统初始化完成"))
 
-;;; ======================
-;;; 提供模式
-;;; ======================
 
-(provide 'weather-monitor)
+(provide 'weather)
 
 ;; 初始化（可选）
 ;; (eval-after-load 'weather-monitor
