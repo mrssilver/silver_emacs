@@ -7,9 +7,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 
-
 (require 'imperial-layout)
-
 (load-theme 'imperial-gold t)
 (set-frame-position (selected-frame) 0 0)
 (set-frame-width (selected-frame) 170)
@@ -35,9 +33,9 @@
 (setq recentf-max-menu-items 15)
 (setq recentf-max-saved-items 15)
 
-(message "aaaaaa")
 
-(message "aaaaaab")
+
+
 ;;圆润字体 高覆盖率
 ;;(set-face-attribute 'default nil :font "ComicShannsMono Nerd Font")
 ;;{
@@ -79,7 +77,6 @@
 (setq auto-revert-mode nil)           ; 禁用 buffer 级别自动刷新
 (setq auto-revert-check-interval nil) ; 禁用定期检查
 (setq auto-revert-verbose nil)        ; 防止提示信息
-
 ;; 禁止 dired 自动刷新目录列表
 (setq dired-auto-revert-buffer nil)
 (add-hook 'dired-mode-hook
@@ -104,10 +101,9 @@
 
 ;; 禁用消息日志和调试输出
 ;;(setq message-log-max nil)
-(setq message-log-max 30)
+(setq message-log-max 50)
 (setq debug-on-error nil)
 (setq debug-on-quit nil)
-
 
 
 ;;globalautorevertnonfilebuffers是用于控制非文件缓冲区（如dired缓冲区等）的自动刷新；globalautoreverttailedbuffers用于控制有“tail”模式（如某些日志文件查看模式）的缓冲区自动刷新。
@@ -117,9 +113,6 @@
 (setq auto-save-default nil)
 
 
-(message "aaaaaac")
-
-
 
 ;;---------------------------------------------------------------------------
 ;; 视觉换行配置
@@ -127,7 +120,6 @@
 (setq visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow))  ; 边缘箭头指示器
 (setq word-wrap t)  ; 按单词边界换行
 (setq-default truncate-lines nil)  ; 禁用自动截断行
-
 ;; 行号显示配置
 (global-display-line-numbers-mode t)  ; 全局行号
 (setq display-line-numbers-type 'absolute)  ; 绝对行号
@@ -142,17 +134,17 @@
 (dolist (mode '(term-mode-hook eshell-mode-hook image-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
-;; 设置org目录
-
-
 
 
 
 ;;---------------------------------------------------------------------------
+
+;; 设置org目录
+
 (setq cache-directory "~/.emacs_cache")
 (setq default-directory "~/Documents/github")
-(setq org-directory "~/Documents/org")
-(setq org-export-directory "~/Documents/org/org-exports")
+(setq org-directory "~/Documents/github/org")
+(setq org-export-directory "~/Documents/github/org/org-exports")
 
 
 
@@ -160,11 +152,7 @@
 ;;EOF时
 (setq search-highlight t)
 (setq lazy-highlight-cleanup nil)
-
-
-
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
-
 ;; 增量搜索默认不区分大小写
 (setq case-fold-search t)
 ;; (可选) 设置替换操作也默认不区分大小写
@@ -177,6 +165,18 @@
 (setq show-paren-delay 0)          ; 无延迟显示
 (setq show-paren-when-point-inside-paren t) ; 光标在括号内时也高亮
 
+
+(defun occur-word-at-point ()
+  "List all occurrences of the word at point using `occur'."
+  (interactive)
+  (let ((word (thing-at-point 'word)))
+    (when word
+      (occur word))))  ; \\< and \\> ensure whole-word matching
+;; non-case-insensitive searching by default
+(setq occur-case-fold-search nil)
+
+(global-set-key (kbd "C-c o p") 'occur-word-at-point)
+(global-set-key (kbd "C-c o o") 'occur)
 
 
 ;;----------------------------------------------------------------
@@ -217,12 +217,6 @@
       lsp-ui-sideline-show-hover t
       lsp-ui-sideline-show-code-actions t
       lsp-ui-doc-position 'top)
-
-
-
-
-
-
 
 
 (setq lsp-go-gocode-command "gopls")
@@ -280,14 +274,5 @@
 ;; Disable undo-tree auto-saving and persistence
 (setq undo-tree-auto-save-history nil)
 (setq undo-tree-history-directory-alist '(("." . nil)))
-(setq gc-cons-threshold 100000000)  ; 默认800KB，此处设为100MB
-(setq gc-cons-percentage 0.3)       ; 内存使用达60%时触发GC
-
-
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(setq gc-cons-threshold 100000000)  ; default800KB，此处设为100MB
+(setq gc-cons-percentage 0.5)       ; 内存使用达50%时触发GC
