@@ -57,10 +57,10 @@
    '(## async auto-correct auto-dim-other-buffers colorful-mode commenter
 	company-go company-statistics csv-mode dap-mode diff-hl
 	diminish dot-mode emacsql erc ess esup evil ffmpeg-player
-	general git-modes gited github-search gnuplot go-autocomplete
-	go-complete go-dlv go-eldoc go-errcheck go-gen-test go-gopath
-	go-guru go-imports go-playground gotest gotest-ts
-	graphviz-dot-mode isearch-mb lsp-ui magit magithub
+	flycheck general git-modes gited github-search gnuplot
+	go-autocomplete go-complete go-dlv go-eldoc go-errcheck
+	go-gen-test go-gopath go-guru go-imports go-playground gotest
+	gotest-ts graphviz-dot-mode isearch-mb lsp-ui magit magithub
 	markdown-mode memory-usage minibar minibuffer-header
 	minibuffer-line minimap multiple-cursors org org-ai org-evil
 	org-journal org-mind-map org-pdftools org-remark org-translate
