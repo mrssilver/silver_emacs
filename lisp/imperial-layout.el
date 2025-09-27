@@ -5,13 +5,13 @@
 (defvar rule nil `())
 (defvar alist-rule nil `())
 (defvar alist-rule2 nil `())
-
+(defvar count 0)
 
 
 (setq alist-rule2
       `(
 	;; Rule 1: 系统消息类缓冲区（复用窗口模式）
-	(,(regexp-opt '("*Messages*" "*undo-tree*" "*help*"                "*godoc*" "*Completions*" "*compilation*" "*occur*") t)
+	(,(regexp-opt '("*Messages*" "*undo-tree*" "*Help*"                "*godoc*" "*Completions*" "*compilation*" "*Occur*") 'words)
 	  (display-buffer-reuse-window)
 	  (window . window-i))
 
@@ -22,7 +22,7 @@
 	  (unless (string-match-p "/usr/" (or buffer-file-name ""))))
 
 	;; Rule 3: 通讯类缓冲区（固定至IO窗口）
-	(,(regexp-opt '("*ERC*" "*mail*" "*gnus*" "*Group*" "*Summary*" "*Article*") t)
+	(,(regexp-opt '("*ERC*" "Buffer List*" "*mail*" "*gnus*" "*Group*" "*Summary*" "*Article*") 'words)
 	  (display-buffer-reuse-window)
 	  (window . window-io)
 	  )
@@ -94,6 +94,11 @@
   - 添加防御性编程检查
   - 支持交互式调用"
   (interactive)
+  (message "layout is working %d times" count)
+
+  (setq count (1+ count))
+  
+  
   (on-state)
   (delete-other-windows)
 

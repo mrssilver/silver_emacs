@@ -74,7 +74,7 @@
   (interactive "n弹出内容的索引: ")
   (region-pop-content num))
 
-(global-set-key (kbd "C-c p p") 'region-push-content)
+(global-set-key (kbd "C-c p u") 'region-push-content)
 (global-set-key (kbd "C-c p o") 'region-pop-content)
 ;;q for quit if special-mode work
 ;;

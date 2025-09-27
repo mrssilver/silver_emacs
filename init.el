@@ -179,7 +179,7 @@
 ;; 显示上下文行数 -1 only above if - only above
 
 (global-set-key (kbd "C-c o p") 'occur-word-at-point)
-(global-set-key (kbd "C-c o o") 'occur)
+(global-set-key (kbd "C-c o c") 'occur)
 
 
 
@@ -282,9 +282,3 @@
 (setq undo-tree-history-directory-alist '(("." . nil)))
 (setq gc-cons-threshold 100000000)  ; default800KB，此处设为100MB
 (setq gc-cons-percentage 0.5)       ; 内存使用达50%时触发GC
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
